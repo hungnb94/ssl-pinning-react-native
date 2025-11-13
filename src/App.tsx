@@ -11,9 +11,17 @@ import {
   SafeAreaProvider,
   useSafeAreaInsets,
 } from 'react-native-safe-area-context';
+import {useEffect} from "react";
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
+    useEffect(() => {
+        fetch('https://finance-api.tekome.com/api/finance/vn30')
+            .then(console.log)
+            .catch(console.error)
+        return () => {
+        };
+    }, []); // 👈 Empty dependency array = run once
 
   return (
     <SafeAreaProvider>
