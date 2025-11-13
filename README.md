@@ -86,12 +86,18 @@ You've successfully run and modified your React Native App. :partying_face:
 
 If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
 
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+# Get certificates
+- openssl s_client -showcerts -servername google.com -connect google.com:443 </dev/null
+- Copy the certificate (Usally the first one in the chain), and paste it using vi or nano
+  ```
+  vi cert1.pem
+  ```
+- Convert it to .cer 
+  ```
+  openssl x509 -in cert1.pem -outform der -out cert1.cer
+  ```
+- Get sha256
+  ```shell
+  openssl x509 -in cert1.cer -inform der -pubkey -noout | openssl pkey -pubin -outform der | openssl dgst -sha256 -binary | base64
+  ```
+  Output: `68qDVtVz9DOhHKHKX0clwySoFneRjUa6gRWpBYmsb10=`. Add prefix `sha256/` if needed
