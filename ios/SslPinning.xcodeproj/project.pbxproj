@@ -11,6 +11,10 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		9C4DB4D3000B28C3038B3E67 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
+		B214B2C52EC58A1700EBF40A /* cert3.cer in Resources */ = {isa = PBXBuildFile; fileRef = B214B2C42EC58A1700EBF40A /* cert3.cer */; };
+		B214B2C62EC58A1700EBF40A /* cert2.cer in Resources */ = {isa = PBXBuildFile; fileRef = B214B2C32EC58A1700EBF40A /* cert2.cer */; };
+		B214B2C72EC58A1700EBF40A /* cert1.cer in Resources */ = {isa = PBXBuildFile; fileRef = B214B2C22EC58A1700EBF40A /* cert1.cer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +27,9 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-SslPinning.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SslPinning.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = SslPinning/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = SslPinning/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B214B2C22EC58A1700EBF40A /* cert1.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = cert1.cer; sourceTree = "<group>"; };
+		B214B2C32EC58A1700EBF40A /* cert2.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = cert2.cer; sourceTree = "<group>"; };
+		B214B2C42EC58A1700EBF40A /* cert3.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = cert3.cer; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -46,6 +53,9 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
+				B214B2C22EC58A1700EBF40A /* cert1.cer */,
+				B214B2C32EC58A1700EBF40A /* cert2.cer */,
+				B214B2C42EC58A1700EBF40A /* cert3.cer */,
 			);
 			name = SslPinning;
 			sourceTree = "<group>";
@@ -159,6 +169,10 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				B214B2C52EC58A1700EBF40A /* cert3.cer in Resources */,
+				B214B2C62EC58A1700EBF40A /* cert2.cer in Resources */,
+				B214B2C72EC58A1700EBF40A /* cert1.cer in Resources */,
+				9C4DB4D3000B28C3038B3E67 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,7 +388,10 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				USE_HERMES = true;
 			};
 			name = Debug;
 		};
@@ -439,7 +456,9 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
+				USE_HERMES = true;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
