@@ -87,7 +87,19 @@ You've successfully run and modified your React Native App. :partying_face:
 If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
 
 # Get certificates
-- openssl s_client -showcerts -servername google.com -connect google.com:443 </dev/null
+## Method 1
+  ```
+  echo | openssl s_client -connect example.com:443 -servername example.com 2>/dev/null \
+    | openssl x509 -pubkey -noout \
+    | openssl pkey -pubin -outform DER \
+    | openssl dgst -sha256 -binary \
+    | base64
+  ```
+## Method 2
+- Get pem
+  ```
+  openssl s_client -showcerts -servername google.com -connect google.com:443 </dev/null
+  ```
 - Copy the certificate (Usally the first one in the chain), and paste it using vi or nano
   ```
   vi cert1.pem
